@@ -1,5 +1,4 @@
 <html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,13 +19,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #fce4ec;
+      background: #f8bbd0;
     }
 
     #page1 {
       width: 100%;
       min-height: 100vh;
-      background: linear-gradient(135deg, #f8bbd0 0%, #f06292 50%, #ec407a 100%);
+      background: #f8bbd0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -175,7 +174,7 @@
       display: none;
       width: 100%;
       min-height: 100vh;
-      background: linear-gradient(135deg, #f8bbd0 0%, #f06292 50%, #ec407a 100%);
+      background: #f8bbd0;
       align-items: center;
       justify-content: center;
       padding: 2rem;
