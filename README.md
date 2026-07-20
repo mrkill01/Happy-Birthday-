@@ -1,167 +1,433 @@
-<html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>For You</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎂 Happy Birthday, Chloe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    body {
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fce4ec;
+    }
 
-<style>
+    #page1 {
+      width: 100%;
+      min-height: 100vh;
+      background-image: url('https://i.ibb.co/M57TNDnR/3073960cd67699563a673dcf31b91d56.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+    }
 
-body{
-margin:0;
-font-family:'Poppins', sans-serif;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+    #page1::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 240, 245, 0.25);
+      backdrop-filter: blur(2px);
+    }
 
-.card{
-background:white;
-padding:35px;
-border-radius:20px;
-text-align:center;
-width:300px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
+    .entrance-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      padding: 2.5rem 2.2rem 2.8rem;
+      border-radius: 60px 20px 60px 20px;
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+      max-width: 550px;
+      width: 100%;
+      text-align: center;
+      border: 2px solid rgba(255, 200, 210, 0.5);
+      transition: 0.3s;
+    }
 
-.title{
-font-family:'Pacifico', cursive;
-color:#ff4b6e;
-font-size:22px;
-margin-bottom:20px;
-}
+    .greeting {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #6a1b3d;
+      text-shadow: 3px 3px 12px rgba(255, 100, 130, 0.3);
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
 
-input{
-width:90%;
-padding:12px;
-border-radius:10px;
-border:2px solid #ff8da1;
-}
+    .instruction {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #5e2a3b;
+      background: rgba(255, 255, 255, 0.6);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 1.8rem;
+      backdrop-filter: blur(4px);
+      border: 1px solid #f8b0c0;
+    }
 
-button{
-margin-top:15px;
-padding:10px 25px;
-border:none;
-border-radius:12px;
-background:#ff4b6e;
-color:white;
-cursor:pointer;
-}
+    .heart-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      max-width: 320px;
+      margin: 0 auto 1.5rem;
+    }
 
-#mainContent{
-display:none;
-width:100%;
-height:100vh;
-background:linear-gradient(135deg,#ff9a9e,#fad0c4);
-padding-top:80px;
-}
+    .heart-btn {
+      background: #fce4ec;
+      border: none;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #a13d5a;
+      padding: 0.8rem 0;
+      border-radius: 40px 10px 40px 10px;
+      box-shadow: 0 6px 0 #c27a8a, 0 8px 16px rgba(0,0,0,0.1);
+      transition: all 0.08s ease;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #ffeef2;
+      border: 2px solid #fcc8d4;
+    }
 
+    .heart-btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #b06a7a;
+    }
 
-.letter{
-background:white;
-width:70%;
-margin:auto;
-padding:40px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.2);
-}
+    .heart-btn:hover {
+      background: #ffe2ea;
+    }
 
-.letter h3{
-font-family:'Pacifico', cursive;
-color:#ff4b6e;
-font-size:28px;
-margin-bottom:15px;
-}
+    .birth-input-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 0.5rem 0 1.5rem;
+    }
 
-.letter p{
-font-family:'Dancing Script', cursive;
-font-size:22px;
-line-height:1.8;
-color:#444;
-}
+    #birthDisplay {
+      background: rgba(255, 255, 255, 0.8);
+      border: 2px solid #e8a0b0;
+      border-radius: 60px;
+      padding: 0.8rem 1.8rem;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #4d1f2e;
+      min-height: 4.2rem;
+      width: 200px;
+      backdrop-filter: blur(2px);
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+    }
 
-#message{
-display:none;
-}
+    .action-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-</style>
+    .action-btn {
+      background: #9f4a62;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: white;
+      box-shadow: 0 8px 0 #552b38;
+      cursor: pointer;
+      transition: 0.08s linear;
+      border: 1px solid #d47a92;
+      letter-spacing: 1px;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .action-btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #552b38;
+    }
+
+    .action-btn.clear-btn {
+      background: #b0a0a8;
+      box-shadow: 0 8px 0 #6e5e66;
+      border-color: #c0b0b8;
+    }
+
+    .action-btn.enter-btn {
+      background: #c45a7a;
+      box-shadow: 0 8px 0 #7a3a4e;
+      border-color: #e07a9a;
+    }
+
+    .hint-text {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #5f3a46;
+      background: rgba(255, 255, 255, 0.5);
+      padding: 0.3rem 1.2rem;
+      border-radius: 30px;
+      backdrop-filter: blur(2px);
+    }
+
+    #page2 {
+      display: none;
+      width: 100%;
+      min-height: 100vh;
+      background-image: url('https://i.ibb.co/fdP17fJ1/f97959d5e6dc56db2fcef3898e0176ed.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    #page2::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 10, 18, 0.2);
+      backdrop-filter: blur(3px);
+    }
+
+    .letter-card {
+      position: relative;
+      z-index: 5;
+      background: rgba(255, 245, 240, 0.85);
+      backdrop-filter: blur(12px);
+      padding: 3rem 2.5rem;
+      border-radius: 70px 20px 70px 20px;
+      max-width: 680px;
+      width: 100%;
+      box-shadow: 0 30px 50px rgba(0,0,0,0.4);
+      border: 2px solid rgba(255, 200, 200, 0.6);
+      color: #2e1a22;
+    }
+
+    .letter-card h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #832d4a;
+      text-align: center;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #e8b0c0;
+      padding-bottom: 0.5rem;
+    }
+
+    .letter-content {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      font-weight: 500;
+      white-space: pre-wrap;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 1.5rem 1.8rem;
+      border-radius: 40px 10px 40px 10px;
+      margin-top: 1rem;
+      border: 1px solid #f0c8d0;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .letter-content p {
+      margin-bottom: 0.8rem;
+    }
+
+    .letter-content .sign {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      text-align: right;
+      color: #a1455e;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 500px) {
+      .greeting { font-size: 3rem; }
+      .heart-grid { gap: 0.7rem; }
+      .heart-btn { font-size: 1.5rem; padding: 0.6rem 0; }
+      .entrance-card { padding: 1.8rem 1.2rem; }
+      .letter-card { padding: 2rem 1.2rem; }
+      .letter-card h2 { font-size: 2.6rem; }
+      .letter-content { font-size: 1rem; padding: 1rem 1.2rem; }
+    }
+
+    @media (max-width: 380px) {
+      .greeting { font-size: 2.5rem; }
+      .heart-btn { font-size: 1.2rem; padding: 0.5rem 0; }
+      #birthDisplay { font-size: 1.5rem; width: 160px; }
+      .action-btn { font-size: 1rem; padding: 0.6rem 1.5rem; }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="card" id="login">
+  <div id="page1">
+    <div class="entrance-card">
+      <h1 class="greeting">Happy Birthday</h1>
+      <div class="instruction">🩷 enter your birth date 🩷</div>
+      
+      <div class="heart-grid" id="heartGrid">
+        <button class="heart-btn" data-value="1">🩷 1</button>
+        <button class="heart-btn" data-value="2">🩷 2</button>
+        <button class="heart-btn" data-value="3">🩷 3</button>
+        <button class="heart-btn" data-value="4">🩷 4</button>
+        <button class="heart-btn" data-value="5">🩷 5</button>
+        <button class="heart-btn" data-value="6">🩷 6</button>
+        <button class="heart-btn" data-value="7">🩷 7</button>
+        <button class="heart-btn" data-value="8">🩷 8</button>
+        <button class="heart-btn" data-value="9">🩷 9</button>
+        <button class="heart-btn" data-value="clear" style="background:#e8d0d8; color:#5f3a46;">✖</button>
+        <button class="heart-btn" data-value="0">🩷 0</button>
+        <button class="heart-btn" data-value="back" style="background:#e8d0d8; color:#5f3a46;">⌫</button>
+      </div>
 
-<div class="title">Enter the secret code</div>
+      <div class="birth-input-area">
+        <div id="birthDisplay">____</div>
+        <div class="action-buttons">
+          <button class="action-btn enter-btn" id="enterBtn">🎂 ENTER</button>
+          <button class="action-btn clear-btn" id="clearBtn">⟲ CLEAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<input type="password" id="code">
+  <div id="page2">
+    <div class="letter-card">
+      <h2>Happy Birthday, Queen</h2>
+      <div class="letter-content">
+        <p>happy birthday, my chloe</p>
+        <p>today is your special day, and I hope you enjoy every moment of it with smiles, laughter, and happiness. I'm so proud of you for making it through every challenge and problem you've faced. you made it to 15! I wish you nothing but all the genuine happiness and beautiful things this world has to offer. I'm always rooting for your success, and I hope you'll be blessed with many more birthdays to come.</p>
+        <p>at the same time, as we've grown older, my feelings for you have grown stronger day by day. every time we're together, I can't fully explain what I feel, but one thing I know for sure is that I love you, and that will never change no matter what happens. at first, I thought it was just puppy love or something temporary, but I was completely wrong. I never imagined that my feelings would grow this deeply.</p>
+        <p>I hope you know that even though I tease you a lot, it will never change the love I have for you. I'm ready and committed to grow with you and work toward our dreams together. no matter what circumstances or challenges life throws at us, I promise to stay by your side and never leave you—even on your darkest days. especially on your darkest days. I promise to sit with you until you're able to see the light again</p>
+        <p>and if you don't mind, I know your parents are strict, and that's exactly why I don't want to rush anything. let's just take things one step at a time. before this day ends, if you're comfortable with it—and with no pressure at all—I would like to ask you something.</p>
+        <p>may I court you, chloe?</p>
+        <div class="sign">— yours truly, kurt</div>
+      </div>
+    </div>
+    <audio id="bgMusic" autoplay loop>
+      <source src="https://audio.jukehost.co.uk/5841e207-40b0-11f1-a012-fa163edb0845">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 
-<br>
+  <script>
+    (function() {
+      const page1 = document.getElementById('page1');
+      const page2 = document.getElementById('page2');
+      const birthDisplay = document.getElementById('birthDisplay');
+      const heartBtns = document.querySelectorAll('.heart-btn');
+      const enterBtn = document.getElementById('enterBtn');
+      const clearBtn = document.getElementById('clearBtn');
+      
+      let birthCode = '';
 
-<button onclick="checkCode()">Enter</button>
+      function updateDisplay() {
+        const padded = birthCode.padEnd(4, '_');
+        birthDisplay.textContent = padded;
+      }
 
-</div>
+      function clearAll() {
+        birthCode = '';
+        updateDisplay();
+      }
 
-<div class="card" id="message">
-<h2 style="font-family:Pacifico;color:#ff4b6e;">
-welcome my baby, I hope you like it
-</h2>
-</div>
+      function inputDigit(value) {
+        if (birthCode.length >= 4) return;
+        if (!/^\d$/.test(value)) return;
+        birthCode += value;
+        updateDisplay();
+      }
 
-<div id="mainContent">
+      function backspace() {
+        birthCode = birthCode.slice(0, -1);
+        updateDisplay();
+      }
 
-<div class="letter">
+      function attemptEnter() {
+        if (birthCode === '0723') {
+          page1.style.display = 'none';
+          page2.style.display = 'flex';
+          const audio = document.getElementById('bgMusic');
+          audio.play().catch(e => {
+            console.log('autoplay attempt:', e);
+          });
+        } else {
+          birthDisplay.style.transition = '0.1s';
+          birthDisplay.style.transform = 'translateX(-8px)';
+          setTimeout(() => { birthDisplay.style.transform = 'translateX(8px)'; }, 100);
+          setTimeout(() => { birthDisplay.style.transform = 'translateX(-6px)'; }, 200);
+          setTimeout(() => { birthDisplay.style.transform = 'translateX(6px)'; }, 300);
+          setTimeout(() => { birthDisplay.style.transform = 'translateX(0)'; }, 400);
+          setTimeout(() => {
+            clearAll();
+            birthDisplay.style.transform = 'translateX(0)';
+          }, 500);
+        }
+      }
 
-<h3>My baby</h3>
+      heartBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const val = this.dataset.value;
+          if (val === 'clear') {
+            clearAll();
+          } else if (val === 'back') {
+            backspace();
+          } else {
+            inputDigit(val);
+          }
+        });
+      });
 
-<p>
-Hi baby, I hope this message finds you well. I just wanted to take a moment to let you know how much I appreciate you — your existence and the time we’ve spent getting to know each other over the past few days. Your kindness, your humor, the way you comfort me, and your intelligence have truly impressed me. I feel really grateful to have you in my life. 
-<br><br>
+      enterBtn.addEventListener('click', attemptEnter);
+      clearBtn.addEventListener('click', clearAll);
 
-I also want to say thank you for accepting me into your life. Even though we’re not in a relationship yet, I feel like we might get there someday. For now, we just need to continue getting to know each other. I know you still don’t know me that well, so please allow me to prove myself to you. I want to show you that not everyone leaves. I hope you can see that my intentions toward you are pure, because they truly are. I don’t want this to become something painful like what we may have experienced in the past. I’m willing to take the risks if it means having a chance to be with you in the end. I may not be the best person you’ve ever met, but I genuinely want to pursue you. I’ve never pretended about how I feel. I know you can be avoidant and that commitment may scare you sometimes, and I understand that. You don’t have to worry about it with me. I believe there’s a deep reason why you feel that way, and I’m willing to understand it. I will love every side of you — your imperfections, your insecurities, and even the parts of yourself that you think others might not accept.
+      document.addEventListener('keydown', function(e) {
+        const key = e.key;
+        if (key >= '0' && key <= '9') {
+          inputDigit(key);
+        } else if (key === 'Backspace') {
+          backspace();
+        } else if (key === 'Enter') {
+          attemptEnter();
+        } else if (key === 'Escape' || key === 'Delete') {
+          clearAll();
+        }
+      });
 
-<br><br>
+      clearAll();
 
-And if the world ever feels cruel to you, always remember that you have me by your side no matter what happens. You can lean on me whenever things get heavy. I’m willing to be your kakampi through everything. You can run to me, talk to me, and share anything with me. As long as I exist, you’ll always have someone who’s here for you — someone who supports you, cares for you, and loves you. And please remember not to push yourself too hard, okay? Be gentle with yourself. You’re doing well, you’re doing great, and I’m really proud of you. 
-</p>
+      document.addEventListener('click', function() {
+        const audio = document.getElementById('bgMusic');
+        if (page2.style.display === 'flex') {
+          audio.play().catch(() => {});
+        }
+      }, { once: false });
 
-</div>
-
-</div>
-<audio id="bgMusic" loop>
-<source src="https://audio.jukehost.co.uk/IEEeBmgcBSRv8iWqg8QaB2AsOzII4HUK" type="audio/mpeg">
-</audio>
-
-<script>
-
-function checkCode(){
-
-var code=document.getElementById("code").value;
-
-if(code==="baby"){
-
-document.getElementById("login").style.display="none";
-document.getElementById("message").style.display="block";
-
-setTimeout(function(){
-
-document.getElementById("message").style.display="none";
-document.getElementById("mainContent").style.display="block";
-
-var music=document.getElementById("bgMusic");
-music.play();
-
-},3000)
-
-}else{
-
-alert("Wrong code");
-
-}
-}
-
-</script>
+    })();
+  </script>
 </body>
 </html>
