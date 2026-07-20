@@ -26,30 +26,32 @@
     #page1 {
       width: 100%;
       min-height: 100vh;
-      background-image: url('https://i.ibb.co/M57TNDnR/3073960cd67699563a673dcf31b91d56.jpg');
+      background: 
+        linear-gradient(rgba(255, 240, 245, 0.3), rgba(255, 240, 245, 0.3)),
+        url('https://i.ibb.co/M57TNDnR/3073960cd67699563a673dcf31b91d56.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
       position: relative;
+      background-color: #f8d7da;
     }
 
     #page1::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(255, 240, 245, 0.25);
+      background: rgba(255, 240, 245, 0.2);
       backdrop-filter: blur(2px);
     }
 
     .entrance-card {
       position: relative;
       z-index: 2;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.75);
       backdrop-filter: blur(8px);
       padding: 2.5rem 2.2rem 2.8rem;
       border-radius: 60px 20px 60px 20px;
@@ -197,15 +199,17 @@
       display: none;
       width: 100%;
       min-height: 100vh;
-      background-image: url('https://i.ibb.co/fdP17fJ1/f97959d5e6dc56db2fcef3898e0176ed.jpg');
+      background: 
+        linear-gradient(rgba(30, 10, 18, 0.2), rgba(30, 10, 18, 0.2)),
+        url('https://i.ibb.co/fdP17fJ1/f97959d5e6dc56db2fcef3898e0176ed.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       position: relative;
+      background-color: #2d1b2e;
     }
 
     #page2::before {
@@ -219,7 +223,7 @@
     .letter-card {
       position: relative;
       z-index: 5;
-      background: rgba(255, 245, 240, 0.85);
+      background: rgba(255, 245, 240, 0.88);
       backdrop-filter: blur(12px);
       padding: 3rem 2.5rem;
       border-radius: 70px 20px 70px 20px;
@@ -287,7 +291,7 @@
 
   <div id="page1">
     <div class="entrance-card">
-      <h1 class="greeting">Happy Birthday</h1>
+      <h1 class="greeting">Happy Birthday, Chloe</h1>
       <div class="instruction">🩷 enter your birth date 🩷</div>
       
       <div class="heart-grid" id="heartGrid">
@@ -317,7 +321,7 @@
 
   <div id="page2">
     <div class="letter-card">
-      <h2>Happy Birthday, Queen</h2>
+      <h2>Happy Birthday, Chloe</h2>
       <div class="letter-content">
         <p>happy birthday, my chloe</p>
         <p>today is your special day, and I hope you enjoy every moment of it with smiles, laughter, and happiness. I'm so proud of you for making it through every challenge and problem you've faced. you made it to 15! I wish you nothing but all the genuine happiness and beautiful things this world has to offer. I'm always rooting for your success, and I hope you'll be blessed with many more birthdays to come.</p>
@@ -325,11 +329,11 @@
         <p>I hope you know that even though I tease you a lot, it will never change the love I have for you. I'm ready and committed to grow with you and work toward our dreams together. no matter what circumstances or challenges life throws at us, I promise to stay by your side and never leave you—even on your darkest days. especially on your darkest days. I promise to sit with you until you're able to see the light again</p>
         <p>and if you don't mind, I know your parents are strict, and that's exactly why I don't want to rush anything. let's just take things one step at a time. before this day ends, if you're comfortable with it—and with no pressure at all—I would like to ask you something.</p>
         <p>may I court you, chloe?</p>
-        <div class="sign">— yours truly, kurt</div>
+        <div class="sign">— yours truly, Kurt</div>
       </div>
     </div>
     <audio id="bgMusic" autoplay loop>
-      <source src="https://audio.jukehost.co.uk/5841e207-40b0-11f1-a012-fa163edb0845">
+      <source src="https://audio.jukehost.co.uk/019f7da7-888a-7302-87e7-a78510d6812d" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
